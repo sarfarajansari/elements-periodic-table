@@ -1,0 +1,161 @@
+<!doctype html >
+<html lang="en"  >
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>CHEMICAL WORLD</title>
+  </head>
+  <body >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">CHEMICAL WORLD</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a class="dropdown-item" onclick="nameclicked()" >
+                    <form action="http://127.0.0.1:8000/main/" id="nameclicked" method="POST" >
+                      {% csrf_token %}
+                      {{nameclicked}}
+                      <input type="submit" style="display: none;" >
+                    </form>Search With Atomic Name
+                  </a>
+                  </li>
+                  <li><a class="dropdown-item" onclick="numberclicked()">
+                    <form action="http://127.0.0.1:8000/main/" id="numberclicked" method="POST" >
+                      {% csrf_token %}
+                      {{numberclicked}}
+                      <input type="submit" style="display: none;" >
+                    </form>Search With Atomic Number</a></li>
+                  <li><a class="dropdown-item" onclick="symbolclicked()">
+                    <form action="http://127.0.0.1:8000/main/" id="symbolclicked" method="POST">
+                      {% csrf_token %}
+                      {{symbolclicked}}
+                      <input type="submit" style="display: none;" >
+                    </form>Search With Atomic Symbol</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    {% block body %}
+    {% endblock %}
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="container-lg" style="background-color: rgb(118, 99, 197);width: 60%;padding: 5px;">
+          
+          <h3>
+            @2021 Sarfaraj
+            <small class="text-muted">Ansari</small>
+            <p class="h5" style="color: white;text-align: right;">web development/design</p>
+            
+          </h3>
+          
+        </div>
+
+    
+  </body>
+  <style>
+    body{
+      background-color: #3b415a;
+      background-image: -webkit-linear-gradient(65deg, #5a3f8a 50%, #343b55 50%);
+      min-height: 1000px;
+    }
+    .addpadding
+    {
+        padding: 20px;
+    }
+    .form-container
+    {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .hidden
+    {
+        display: none;
+    }
+    #table-container
+    {
+        padding: 40px;
+        padding-left: 60px;
+        padding-right: 60px;
+        box-shadow: 10px 10px 20px -5px rgb(143, 122, 122);
+    }
+    .goback-button
+    {
+        border-radius: 5px;
+    }
+    #alert-container
+    {
+        background-color: linear-gradient(red,rgb(207, 126, 21));
+    }
+  </style>
+
+  <script>
+    var n= {{clickednumber}}
+
+    function symbol(){
+      
+      document.querySelector('#symbol-form').style.display = "block";
+      document.querySelector('#name-form').style.display = "none";
+      document.querySelector('#number-form').style.display = "none";
+      
+    }
+    function symbolclicked(){
+      document.querySelector("#symbolclicked").submit();
+    }
+
+    function number(){
+      
+      document.querySelector('#symbol-form').style.display = "none";
+      document.querySelector('#name-form').style.display = "none";
+      document.querySelector('#number-form').style.display = "block";
+      
+    }
+
+    function numberclicked(){
+      document.querySelector("#numberclicked").submit();
+    }
+    function nameform(){
+      
+      document.querySelector('#symbol-form').style.display = "none";
+      document.querySelector('#name-form').style.display = "block";
+      document.querySelector('#number-form').style.display = "none";
+      
+    }
+    function nameclicked(){
+      document.querySelector("#nameclicked").submit();
+    }
+    if(n!=0){
+      
+      document.addEventListener("DOMContentLoaded",function(){
+        if (n==1){
+          nameform();
+        }
+        else if(n==2){
+          number();
+        }
+        else{
+          symbol();
+        }
+      });
+        
+      
+    }
+  </script>
+</html>

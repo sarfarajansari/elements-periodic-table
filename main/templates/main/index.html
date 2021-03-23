@@ -1,0 +1,44 @@
+{% extends "main/layout.html" %}
+{% block body %}
+<br><br><br>
+
+<div id="number-form" style="display: none;">
+
+    <form   method="POST" action="http://127.0.0.1:8000/">
+
+        <div class="input-group mb-3 form-container">
+            {% csrf_token %}
+            {{numberform}}
+            <button class="btn btn-outline-dark addpadding" type="submit" id="button-addon2">Submit</button>
+            
+        </div>
+    </form>
+</div>
+
+<div id="symbol-form"  style="display: none;">
+    <form   method="POST"  action="http://127.0.0.1:8000/">
+
+        <div class="input-group mb-3 form-container" >
+            {% csrf_token %}
+            {{symbolform}}
+            <button class="btn btn-outline-dark addpadding" type="submit" id="button-addon2">Submit</button>
+            
+        </div>
+    </form>
+</div>
+
+<div id="name-form" >
+    <form   method="POST" action="http://127.0.0.1:8000/" style="display: block;">
+
+        <div class="input-group mb-3 form-container">
+            {% csrf_token %}
+            {{nameform}}
+            <button class="btn btn-outline-dark addpadding" type="submit" id="button-addon2">Submit</button>
+            
+        </div>
+    </form>
+</div>
+
+
+
+{% endblock %}
