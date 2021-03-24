@@ -4,7 +4,7 @@
 
 <div id="number-form" style="display: none;">
 
-    <form   method="POST" action="http://127.0.0.1:8000/">
+    <form   method="POST" action="{% url 'main:index' %}">
 
         <div class="input-group mb-3 form-container">
             {% csrf_token %}
@@ -16,7 +16,7 @@
 </div>
 
 <div id="symbol-form"  style="display: none;">
-    <form   method="POST"  action="http://127.0.0.1:8000/">
+    <form   method="POST"  action="{% url 'main:index' %}">
 
         <div class="input-group mb-3 form-container" >
             {% csrf_token %}
@@ -28,7 +28,7 @@
 </div>
 
 <div id="name-form" >
-    <form   method="POST" action="http://127.0.0.1:8000/" style="display: block;">
+    <form   method="POST" action="{% url 'main:index' %}" style="display: block;">
 
         <div class="input-group mb-3 form-container">
             {% csrf_token %}
