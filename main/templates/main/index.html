@@ -1,0 +1,19 @@
+{% extends "main/layout.html" %}
+{% block body %}
+<br><br><br>
+
+<div id="number-form">
+    <form   method="GET" action="{% url 'main:search' %}">
+
+        <div class="input-group mb-3 form-container">
+            {{nameform}}
+            <button class="btn btn-outline-dark addpadding" type="submit" id="button-addon2">Submit</button>
+            
+        </div>
+    </form>
+</div>
+</div>
+
+
+
+{% endblock %}

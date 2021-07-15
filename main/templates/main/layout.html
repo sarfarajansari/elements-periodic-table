@@ -1,0 +1,97 @@
+<!doctype html >
+<html lang="en"  >
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+
+    <title>CHEMICAL WORLD</title>
+  </head>
+  <body >
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'main:index' %}">CHEMICAL WORLD</a>
+
+
+        </div>
+      </nav>
+
+
+
+
+
+
+
+    {% block body %}
+    {% endblock %}
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="container-lg" style="background-color: rgb(118, 99, 197);width: 60%;padding: 5px;">
+
+          <a href="https://www.instagram.com/sarfarajansari_/" style="text-decoration: none;color:black"><h3>
+            @2021 Sarfaraj</a>
+            <small class="text-muted">Ansari</small>
+            <p class="h5" style="color: white;text-align: right;">web development/design</p>
+
+          </h3>
+
+        </div>
+
+
+  </body>
+
+
+
+
+
+
+
+  <style>
+    body{
+      background-color: #3b415a;
+      background-image: -webkit-linear-gradient(65deg, #5a3f8a 50%, #343b55 50%);
+      min-height: 1000px;
+    }
+    .addpadding
+    {
+        padding: 20px;
+    }
+    .form-container
+    {
+        padding-left:6%;
+        padding-right:6%;
+    }
+    .hidden
+    {
+        display: none;
+    }
+    #table-container
+    {
+        padding: 40px;
+        padding-left: 6%;
+        padding-right: 6%;
+        box-shadow: 10px 10px 20px -5px rgb(143, 122, 122);
+    }
+    .goback-button
+    {
+        border-radius: 5px;
+    }
+    #alert-container
+    {
+        background-color: linear-gradient(red,rgb(207, 126, 21));
+    }
+  </style>
+
+
+
+
+</html>
